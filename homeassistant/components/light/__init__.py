@@ -225,7 +225,7 @@ def async_setup(hass, config):
         params.pop(ATTR_ENTITY_ID, None)
 
         # Processing extra data for turn light on request.
-        profile = profiles.get(params.pop(ATTR_PROFILE, None))
+        profile = profiles.get(params.get(ATTR_PROFILE, None))
 
         if profile:
             params.setdefault(ATTR_XY_COLOR, profile[:2])
